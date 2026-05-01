@@ -23,7 +23,7 @@ I would then ask the LLM to generate the first draft of code
 that were not directly related to the database. 
 For example, I asked to generate the HTML files which determined how the GUI would look. I would manually inspect and test LLM-generated code by running it on different cases and looking up any 
 code that I did not understand on the respective documentation
-(for example, for HTML I used https://developer.mozilla.org/en-US/) to see if the LLM 
-code made sense. I would then manually edit the code if there were parts of the code 
+(for example, for HTML I used https://developer.mozilla.org/en-US/) to see if the LLM-generated 
+code made sense. I would then edit the code if there were parts of the code 
 that I was unhappy with, such as if there were parts of the GUI that was not to my liking.
 
