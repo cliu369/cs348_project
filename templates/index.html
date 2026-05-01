@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library</title>
+    <style>
+        table { width: 80%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Library</h1>
+    
+    <a href="/add_book">Add New Book</a>
+    <hr>
+    
+    <fieldset>
+        <legend>Filter Books</legend>
+        <form action="/" method="GET">
+            <input type="number" name="year" placeholder="Year">
+            <input type="text" name="author" placeholder="Author Name">
+            <button type="submit">Apply Filter</button>
+            <!-- <a href="/">Clear</a> -->
+        </form>
+    </fieldset>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publication Year</th>
+                <th>Loans</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author.name }}</td> 
+                <td>{{ book.pub_year }}</td>
+                <td>{{ book.loan_count }}</td>
+                <td>
+                  <a href="{{ url_for('borrow_book', id=book.book_id) }}" 
+                    style="padding: 5px; text-decoration: none; border-radius: 3px;">
+                    Borrow
+                  </a>
+                  <a href="{{ url_for('delete_book', id=book.book_id) }}" 
+                    style="padding: 5px; text-decoration: none; border-radius: 3px; margin-left: 10px;">
+                    Delete
+                  </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if not books %}
+        <p>No books found. Try adding one!</p>
+    {% endif %}
+</body>
+</html>
