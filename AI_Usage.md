@@ -7,7 +7,7 @@ Google Gemini.
 ## What Tasks the AI Assisted With
 The task the LLM assisted with 
 was coming up with the first draft of the 
-non-database related code, essentialy
+non-database related code, mainly the 
 the HTML files and setup for the Flask application. 
 I also used it to clarify concepts (this did not generate any output).
 
@@ -19,13 +19,11 @@ The workflow I used is that I came up with the high-level ideas for the project,
 * Choice of isolation levels, sql injection
 * GUI design 
 
-I would then ask the LLM to generate the first draft of code 
-that I regarded as "boilerplate", e.g. not related to 
-the manipulation of the actual database. For example, I asked to
-generate the HTML files which determined how the GUI would look. I would manually inspect and test LLM-generated code
-by running it on different cases and looking up any 
+I would then ask the LLM to generate the first draft of code
+that were not directly related to the database. 
+For example, I asked to generate the HTML files which determined how the GUI would look. I would manually inspect and test LLM-generated code by running it on different cases and looking up any 
 code that I did not understand on the respective documentation
-(for example, for HTML I used https://developer.mozilla.org/en-US/) to see if the LLM use made sense. I would then 
-manually edit the code if there were parts of the code 
+(for example, for HTML I used https://developer.mozilla.org/en-US/) to see if the LLM 
+code made sense. I would then manually edit the code if there were parts of the code 
 that I was unhappy with, such as if there were parts of the GUI that was not to my liking.
 
